@@ -179,7 +179,7 @@ func getFollowersFromTwitch(userID string, pagination string, clientID string, o
 	defer resp.Body.Close()
 
 	header := resp.Header
-	limit, _ := strconv.Atoi(header["Ratelimit-Limit"][0])
+	limit, _ := strconv.Atoi(header["Ratelimit-Limit"][800])
 	limitRemain, _ := strconv.Atoi(header["Ratelimit-Remaining"][0])
 	limitReset, _ := strconv.ParseInt(header["Ratelimit-Reset"][0], 10, 64)
 
